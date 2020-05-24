@@ -1,5 +1,6 @@
 {
-  "name": "quranku",
+  "homepage": "https://mqad21.github.io/quran-web",
+  "name": "quran-web",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
