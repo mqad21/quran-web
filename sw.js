@@ -5,67 +5,19 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox
 const precacheManifest = [
   {
     "url": "asset-manifest.json",
-    "revision": "47bab4c1fac83f1b85162da1ca91f48b"
-  },
-  {
-    "url": "assets/ayat.png",
-    "revision": "40e2b7564f0ddd7ab344b7b79b060a02"
-  },
-  {
-    "url": "assets/ayat.svg",
-    "revision": "0be9f9071c58b89e5b4463518f03e518"
-  },
-  {
-    "url": "assets/frame-left.png",
-    "revision": "857fe7063ce9e7ce1fa9d369fe68d4f4"
-  },
-  {
-    "url": "assets/frame-right.png",
-    "revision": "46628c49432941a226d7667130225d26"
-  },
-  {
-    "url": "assets/frame.svg",
-    "revision": "3e48ab3aefdb9d485cf5bf23fe2e4a6b"
-  },
-  {
-    "url": "assets/frame.svg.2020_05_22_21_56_46.1.svg",
-    "revision": "138eb65a7172040bb5eb0950ba98a5ec"
-  },
-  {
-    "url": "assets/logo-white.png",
-    "revision": "e8333ad40bd3a9a079bc441a4c345bb9"
-  },
-  {
-    "url": "assets/logo.png",
-    "revision": "d23e3bea4471aa370a0a77f1e1050503"
-  },
-  {
-    "url": "assets/logo.svg",
-    "revision": "3210788f3b44f51467fc25cf4800dc32"
-  },
-  {
-    "url": "assets/logo192.png",
-    "revision": "18d487ce5886f784bf0cdc742cdb95a7"
-  },
-  {
-    "url": "assets/logo512.png",
-    "revision": "20ae5c616d1f11a6534cc9dbcca6cca9"
-  },
-  {
-    "url": "assets/uthmanic.otf",
-    "revision": "43269f118299246de0cf264e04ae2680"
+    "revision": "58b5439eacf7b54ee94dcb7539ccfd8e"
   },
   {
     "url": "index.html",
-    "revision": "46f46c676904a99c90e1ca5591da020f"
+    "revision": "e0befb18ee1a2f94e6e34115d12a3ad2"
   },
   {
     "url": "manifest.json",
     "revision": "0db04aa0a35561a06118d95435e160fd"
   },
   {
-    "url": "precache-manifest.dd28f8157f5ffd3dc2c9c0e2233c5cf0.js",
-    "revision": "dd28f8157f5ffd3dc2c9c0e2233c5cf0"
+    "url": "precache-manifest.22910b5eff4a9c00c428df3663e974ef.js",
+    "revision": "22910b5eff4a9c00c428df3663e974ef"
   },
   {
     "url": "robots.txt",
@@ -73,15 +25,15 @@ const precacheManifest = [
   },
   {
     "url": "service-worker.js",
-    "revision": "b15e233fe3e5f234cf5c7f9cf577c4d1"
+    "revision": "2722e7ef8eae938a57bdad9711d6b414"
   },
   {
     "url": "static/css/2.5a510433.chunk.css",
     "revision": "38ae303f930cf49cbb9c51d8d3532615"
   },
   {
-    "url": "static/css/main.7d98b71a.chunk.css",
-    "revision": "5aebc0510360fb65cf5ab4af61d51b3d"
+    "url": "static/css/main.0674a081.chunk.css",
+    "revision": "80c7ed76c6eabe4d4e50ac0657f0c2b1"
   },
   {
     "url": "static/js/2.98b13835.chunk.js",
@@ -94,6 +46,18 @@ const precacheManifest = [
   {
     "url": "static/js/runtime-main.a1e289cd.js",
     "revision": "5bd3b0c4b1997de20ace6e5645df746a"
+  },
+  {
+    "url": "static/media/frame-left.857fe706.png",
+    "revision": "857fe7063ce9e7ce1fa9d369fe68d4f4"
+  },
+  {
+    "url": "static/media/frame-right.46628c49.png",
+    "revision": "46628c49432941a226d7667130225d26"
+  },
+  {
+    "url": "static/media/uthmanic.43269f11.otf",
+    "revision": "43269f118299246de0cf264e04ae2680"
   },
   {
     "url": "workbox-v4.3.1/workbox-background-sync.dev.js",
