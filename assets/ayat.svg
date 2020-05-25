@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="ayat.svg"
+   inkscape:export-filename="F:\Projects\quranku\public\assets\ayat.png"
+   inkscape:export-xdpi="150"
+   inkscape:export-ydpi="150">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="338.88295"
+     inkscape:cy="78.122649"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1366"
+     inkscape:window-height="715"
+     inkscape:window-x="-8"
+     inkscape:window-y="22"
+     inkscape:window-maximized="1">
+    <sodipodi:guide
+       position="50.714392,179.33786"
+       orientation="1,0"
+       id="guide830"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="41.560409,153.14544"
+       orientation="1,0"
+       id="guide832"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="50.714391,187.08868"
+       orientation="0,1"
+       id="guide834"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       sodipodi:nodetypes="scccsccsscssccscccscscccsccsscssccscccscs"
+       inkscape:connector-curvature="0"
+       id="path836"
+       d="m 79.048862,165.31242 c 0.0604,-3.97551 5.91162,-8.58851 9.03056,-8.42849 v -7.75081 l 6.573,-1e-5 c 0,0 1.65978,-11.12328 14.202358,-9.27251 2.6776,0.3951 6.43467,2.81939 9.89382,5.46392 l 2.53906,-3.94222 c 0,0 -12.02713,-6.1472 1.87089,-16.83798 6.38356,-4.91043 8.00787,-6.32578 8.83749,-8.66067 0.97659,-2.74852 0.95397,-5.97233 0.95397,-5.97233 0,0 -0.0226,3.22381 0.95398,5.97233 0.82961,2.33489 2.45393,3.75024 8.83749,8.66067 13.89802,10.69078 1.87089,16.83798 1.87089,16.83798 l 2.53906,3.94222 c 3.45914,-2.64453 7.21622,-5.06882 9.89382,-5.46392 12.54258,-1.85077 14.20236,9.27251 14.20236,9.27251 l 6.573,1e-5 v 7.75081 c 3.11893,-0.16002 8.97016,4.45298 9.03056,8.42849 0.12342,8.1232 0.12342,17.76393 0.12342,17.76393 0,0 0,9.64073 -0.12342,17.76393 -0.0604,3.97551 -5.91163,8.58851 -9.03056,8.42849 v 7.75081 l -6.573,1e-5 c 0,0 -1.65978,11.12328 -14.20236,9.27251 -2.6776,-0.3951 -6.43468,-2.81939 -9.89382,-5.46392 l -2.53906,3.94222 c 0,0 12.02713,6.14719 -1.87089,16.83798 -6.38356,4.91043 -8.00788,6.32578 -8.83749,8.66067 -0.97659,2.74852 -0.95398,5.97233 -0.95398,5.97233 0,0 0.0226,-3.22381 -0.95397,-5.97233 -0.82962,-2.33489 -2.45393,-3.75024 -8.83749,-8.66067 -13.89802,-10.69079 -1.87089,-16.83798 -1.87089,-16.83798 l -2.53906,-3.94222 c -3.45915,2.64453 -7.21622,5.06882 -9.89382,5.46392 -12.542578,1.85077 -14.202358,-9.27251 -14.202358,-9.27251 l -6.573,-1e-5 v -7.75081 c -3.11894,0.16002 -8.97016,-4.45298 -9.03056,-8.42849 -0.12343,-8.1232 -0.12342,-17.76393 -0.12342,-17.76393 0,0 -1e-5,-9.64073 0.12342,-17.76393 z"
+       style="fill:none;stroke:#84eef6;stroke-width:4;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+  </g>
+</svg>

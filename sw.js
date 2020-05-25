@@ -8,6 +8,30 @@ const precacheManifest = [
     "revision": "58b5439eacf7b54ee94dcb7539ccfd8e"
   },
   {
+    "url": "assets/ayat.png",
+    "revision": "40e2b7564f0ddd7ab344b7b79b060a02"
+  },
+  {
+    "url": "assets/ayat.svg",
+    "revision": "0be9f9071c58b89e5b4463518f03e518"
+  },
+  {
+    "url": "assets/logo-white.png",
+    "revision": "e8333ad40bd3a9a079bc441a4c345bb9"
+  },
+  {
+    "url": "assets/logo.png",
+    "revision": "d23e3bea4471aa370a0a77f1e1050503"
+  },
+  {
+    "url": "assets/logo192.png",
+    "revision": "18d487ce5886f784bf0cdc742cdb95a7"
+  },
+  {
+    "url": "assets/logo512.png",
+    "revision": "20ae5c616d1f11a6534cc9dbcca6cca9"
+  },
+  {
     "url": "index.html",
     "revision": "e0befb18ee1a2f94e6e34115d12a3ad2"
   },
