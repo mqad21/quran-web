@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '1rem',
         color: '#0fc7d5',
         fontWeight: 'bold',
-        background: `url(/assets/ayat.png)`,
+        background: `url(./assets/ayat.png)`,
         backgroundSize: '55px',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center'

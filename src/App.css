@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Scheherazade:wght@700&display=swap');
 @font-face {
     font-family: Uthmanic;
-    src: url("/assets/uthmanic.otf") format("opentype");
+    src: url("./assets/uthmanic.otf") format("opentype");
 }
 
 .bismillah {
@@ -20,7 +20,7 @@
 }
 
 .bismillah::after {
-    background-image: url('/assets/frame-right.png');
+    background-image: url('./assets/frame-right.png');
     background-size: 30px 50px;
     display: inline-block;
     width: 30px;
@@ -30,7 +30,7 @@
 }
 
 .bismillah::before {
-    background-image: url('/assets/frame-left.png');
+    background-image: url('./assets/frame-left.png');
     background-size: 30px 50px;
     display: inline-block;
     width: 30px;

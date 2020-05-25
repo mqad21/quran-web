@@ -123,7 +123,6 @@ export default function MainComp() {
                     className={clsx(classes.appBar, {
                         [classes.appBarShift]: open,
                     })}
-                    title={<img src="/assets/logo-white.png" />}
                 >
                     <Toolbar className={clsx(classes.toolbarq)}>
                         <IconButton
@@ -135,7 +134,7 @@ export default function MainComp() {
                         >
                             <MenuIcon />
                         </IconButton>
-                        <img src="/assets/logo-white.png" className={classes.img} width="30"/>
+                        <img src="./assets/logo-white.png" className={classes.img} width="30"/>
                         <Typography variant="h6" noWrap>
                             Quran Web
                         </Typography>

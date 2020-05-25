@@ -23,8 +23,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start-sw": "workbox copyLibraries build/ && workbox injectManifest workbox-config.js && http-server build/ -c 0",
-    "predeploy": "npm run build",
+    "start-sw": "workbox copyLibraries build/ && workbox injectManifest workbox-config.js",
+    "predeploy": "npm run build && workbox copyLibraries build/ && workbox injectManifest workbox-config.js",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {

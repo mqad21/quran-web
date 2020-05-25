@@ -12,11 +12,12 @@ const dataCacheConfig = {
 };
 
 workbox.routing.registerRoute(
-    /.*.(?:js|css)$/,
+    /.*.(?:js|css|otf)$/,
     workbox.strategies.cacheFirst({
         cacheName: 'quran-assets'
     }),
     'GET');
+
 workbox.routing.registerRoute(
     /.*.(?:png|jpg|jpeg|svg)$/,
     workbox.strategies.cacheFirst({
