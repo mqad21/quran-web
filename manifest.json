@@ -1,6 +1,7 @@
 {
   "short_name": "Quran Web",
-  "name": "A simple implementation of PWA for Holy Book of Quran",
+  "name": "Quran Web",
+  "description": "A simple implementation of PWA React for The Holy Book of Quran",
   "icons": [
     {
       "src": "assets/logo192.png",
