@@ -37,7 +37,7 @@ const precacheManifest = [
   },
   {
     "url": "manifest.json",
-    "revision": "0db04aa0a35561a06118d95435e160fd"
+    "revision": "32e8987604b9e9d73ef4a1a682254118"
   },
   {
     "url": "precache-manifest.92b3be48738ddce8da3565307307ebce.js",
