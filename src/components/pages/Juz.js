@@ -1,14 +1,13 @@
-import React, { useEffect, useRef, useState, useContext } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import TabMenu from '../TabMenuComp';
 import TabPanel from '../TabPanelComp';
-import SurahCont from '../SurahComp';
+import JuzCont from '../JuzComp';
 import Fab from '@material-ui/core/Fab';
-import { makeStyles, useTheme, withStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import HeightIcon from '@material-ui/icons/HeightRounded';
-import SurahList from '../../json/surah.json';
+import JuzList from '../../json/juz.json';
 import Slider from '@material-ui/core/Slider';
 import clsx from 'clsx';
-import Context from '../../store/context';
 
 const useStyles = makeStyles((theme) => ({
     fab: {
@@ -62,15 +61,15 @@ const PrettoSlider = withStyles({
     },
 })(Slider);
 
-function Surah(props) {
-    const { surah } = props;
+function Juz(props) {
+    const { juz } = props;
     const classes = useStyles();
-    const theme = useTheme();
     const [hideScroll, setHideScroll] = React.useState(true);
     const [ayatScroll, setAyatScroll] = React.useState(1);
-    const [surahLength, setSurahLength] = React.useState(0);
+    const [juzLength, setJuzLength] = React.useState(0);
     const ayatSlider = useRef();
-    const { state, actions } = useContext(Context);
+    const [ayatArr, setAyatArr] = React.useState([]);
+
     const useOutsideClick = (ref, callback) => {
         const handleClick = e => {
             if (ref.current && !ref.current.contains(e.target)) {
@@ -99,7 +98,7 @@ function Surah(props) {
         label: 'Add',
     };
 
-    const handleChangeTab = (event, value) => {
+    const handleChangeTab = (event, newValue) => {
         setHideScroll(true);
         setAyatScroll(1);
         window.scrollTo(0, 0);
@@ -110,40 +109,29 @@ function Surah(props) {
     };
 
     const handleSliderChange = (sliderValue) => {
-        var ayatCurrent = surahLength - sliderValue + 1;
-        scrollToAyat(ayatCurrent);
+        var ayatCurrent = juzLength - sliderValue + 1;
+        scrollToAyat(ayatCurrent)
+    }
+
+    const formatLabel = (val) => {
+        return ayatArr[juzLength - val];
     }
 
     function scrollToAyat(ayatCurrent) {
         if (ayatCurrent < 1) ayatCurrent = 1;
-        if (ayatCurrent > 1) {
-            var ayatElem = document.getElementById("ayat-" + ayatCurrent);
-            ayatElem.scrollIntoView({ behavior: 'auto' });
-            var scrolledY = window.scrollY;
-            if (scrolledY) {
-                window.scroll(0, scrolledY - 99);
-            }
-        } else {
-            window.scrollTo(0, 0);
+        var ayatElem = document.getElementById("ayat-" + ayatCurrent);
+        ayatElem.scrollIntoView({ behavior: 'auto' });
+        var scrolledY = window.scrollY;
+        if (scrolledY) {
+            window.scroll(0, scrolledY - 99);
         }
     }
 
-    React.useEffect(() => {
-        if (state.scrollTo) {
-            scrollToAyat(state.savedSurah.ayat);
-        }
-        actions({
-            type: 'setState', payload: {
-                ...state, scrollTo: false
-            }
-        });
-    }, [state.scrollTo])
-
     return (
-        <React.Fragment>
-            <TabMenu tabSelected={surah} list={SurahList} handleChangeTab={handleChangeTab} />
+        <div>
+            <TabMenu tabSelected={juz} list={JuzList} handleChangeTab={handleChangeTab}/>
             <TabPanel>
-                <SurahCont type="surah" surah={props.surah} setSurahLength={setSurahLength} ayatScroll={ayatScroll} />
+                <JuzCont type="juz" juz={props.juz} setJuzLength={setJuzLength} setAyatArr={setAyatArr} ayatScroll={ayatScroll} />
             </TabPanel>
             <div ref={ayatSlider}>
                 <Fab aria-label={fab.label} className={fab.className} color={fab.color}
@@ -162,16 +150,14 @@ function Surah(props) {
                     aria-labelledby="vertical-slider"
                     track={false}
                     min={1}
-                    max={surahLength}
+                    max={juzLength}
                     onChangeCommitted={(e, val) => handleSliderChange(val)}
-                    valueLabelFormat={(val) => {
-                        return (surahLength - val + 1)
-                    }}
+                    valueLabelFormat={(val) => formatLabel(val)}
                     defaultValue={1000}
                 />
             </div>
-        </React.Fragment>
+        </div>
     );
 }
 
-export default Surah;
+export default Juz;

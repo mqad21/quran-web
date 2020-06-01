@@ -1,5 +1,5 @@
 import React from 'react';
-import Ayat from './Ayats';
+import Ayat from './AyatComp';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
         }),
         maxWidth: '100vw',
         position: 'relative',
-        zIndex: '-20'
+        zIndex: '0'
     },
 }));
 

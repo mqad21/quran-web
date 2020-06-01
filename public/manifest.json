@@ -1,6 +1,7 @@
 {
   "short_name": "Quran Web",
-  "name": "A simple implementation of PWA for Holy Book of Quran",
+  "name": "Quran Web",
+  "description": "A simple implementation of PWA React for The Holy Book of Quran",
   "icons": [
     {
       "src": "assets/logo192.png",
@@ -13,7 +14,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "https://mqad21.github.io/quran-web",
+  "start_url": "https://mqad21.github.io/quran-web/",
   "display": "standalone",
   "theme_color": "#43e485",
   "background_color": "#ffffff"

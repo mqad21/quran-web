@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import List from '@material-ui/core/List';
-import axios from 'axios';
-import Ayat from '../AyatComp';
+import Ayat from './AyatComp';
 import { makeStyles } from '@material-ui/core/styles';
-import Loading from '../LoadingComp';
-import Bismillah from '../BismillahComp';
-import AyatJSON from '../../json/quran-simple.json';
-import TransJSON from '../../json/translation.json';
+import Loading from './LoadingComp';
+import Bismillah from './BismillahComp';
+import AyatJSON from '../json/quran-simple.json';
+import TransJSON from '../json/translation.json';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -19,64 +18,71 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function Ayats(props) {
+function SurahCont(props) {
     const classes = useStyles();
     const [ayatArr, setAyatArr] = useState([]);
     const [transArr, setTransArr] = useState([]);
     const { type, surah } = props;
-    const [surahId, setSurahId] = useState(surah);
+    const [surahId, setSurahId] = useState(1);
     const [isLoading, setLoading] = useState(true)
+    const [quranData, setQuranData] = useState([]);
 
-    const ayat = AyatJSON.data.surahs;
-    const trans = TransJSON.data.surahs;
-    var quranArr = [];
-    for (let i = 0; i < ayat.length; i++) {
-        quranArr.push({ ay: ayat[i], tr: trans[i] })
-    }
-    console.log(quranArr)
+    useEffect(() => {
+        const ayat = AyatJSON.data.surahs;
+        const trans = TransJSON.data.surahs;
 
-    const setLoadingBar = (obj) => {
-        return new Promise((resolve, reject) => {
-            setLoading(true);
-            resolve(obj)
-        })
-    }
+        var quranArr = [];
+        for (let i = 0; i < ayat.length; i++) {
+            quranArr.push({ ay: ayat[i], tr: trans[i] })
+        }
+
+        setQuranData(quranArr);
+        console.log(quranArr);
+    }, [])
 
     const surahFilter = (filter, obj) => {
         return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(
-                    obj.filter((surah) => {
-                        return surah.ay.number == filter;
-                    })[0]
-                )
-            }, 500);
-        })
+            resolve(
+                obj.filter((surah) => {
+                    return surah.ay.number == filter;
+                })[0]
+            )
+        });
     }
 
     const setToState = (surah) => {
+        console.log(surah)
         return new Promise((resolve, reject) => {
-            console.log(surah)
+            props.setSurahLength(surah.ay.ayahs.length);
             setAyatArr(surah.ay.ayahs);
             setTransArr(surah.tr.ayahs);
             resolve(true)
-        })
+        });
     }
 
     function fetchAyat() {
-        setLoadingBar(quranArr)
-            .then(ayat => surahFilter(surah, ayat))
+        console.log(quranData)
+        surahFilter(surahId, quranData)
             .then(surah => setToState(surah))
             .then(status => {
                 if (status) {
-                    setLoading(false)
+                    setTimeout(() => {
+                        setLoading(false)
+                    }, 500)
                 }
-            })
+            });
     }
 
     useEffect(() => {
-        fetchAyat();
-    }, [surahId]);
+        setSurahId(surah)
+    }, [surah]);
+
+    useEffect(() => {
+        setLoading(true);
+        if (quranData.length !== 0) {
+            fetchAyat();
+        }
+    }, [surahId, quranData])
 
     // const baseUrl = "https://api.alquran.cloud/v1/";
 
@@ -111,10 +117,6 @@ function Ayats(props) {
     //     fetchAyat();
     // }, [surahId]);
 
-    useEffect(() => {
-        setSurahId(surah)
-    });
-
     const ayatContent = () => {
         if (isLoading) {
             return (
@@ -125,15 +127,8 @@ function Ayats(props) {
                 <div>
                     <Bismillah surah={surah} />
                     {
-                        // ayatArr.map((ayat, index) => (
-                        //     <Ayat key={index} ayat={{
-                        //         numberInSurah: ayat.ay.numberInSurah,
-                        //         text: ayat.ay.text,
-                        //         trans: ayat.tr.text
-                        //     }} />
-                        // ))
                         ayatArr.map((ayat, index) => (
-                            <Ayat key={index} ayat={{
+                            <Ayat id={"ayat-" + ayat.numberInSurah} surah={surah} key={index} ayat={{
                                 numberInSurah: ayat.numberInSurah,
                                 text: ayat.text,
                                 trans: transArr[index].text
@@ -154,4 +149,4 @@ function Ayats(props) {
     );
 }
 
-export default Ayats;
+export default SurahCont;

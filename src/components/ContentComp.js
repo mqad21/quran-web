@@ -3,8 +3,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Home from './pages/Home';
 import Surah from './pages/Surah';
-import TabPanel from './surah/TabPanel';
-
+import Juz from './pages/Juz';
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -33,6 +32,12 @@ const SurahWithId = ({ match }) => {
     )
 }
 
+const JuzWithId = ({ match }) => {
+    return (
+        <Juz juz={parseInt(match.params.juzId, 10)} />
+    )
+}
+
 function Content() {
     const classes = useStyles();
     const theme = useTheme();
@@ -41,9 +46,12 @@ function Content() {
         <main className={classes.content}>
             <div className={classes.drawerHeader} />
             <Switch>
-                <Route exact path="/" component={Home} />
                 <Route path="/surah/:surahId" component={SurahWithId} />
-                <Redirect from="/surah" to="/surah/1" />
+                <Route path="/juz/:juzId" component={JuzWithId} />
+                <Redirect exact from="/" to="/surah/1" />
+                <Redirect exact from="/surah" to="/surah/1" />
+                <Redirect exact from="/juz" to="/juz/1" />
+                <Redirect to="/surah/1"/>
             </Switch>
         </main>
     )

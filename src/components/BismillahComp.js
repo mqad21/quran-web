@@ -1,37 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ListItem from '@material-ui/core/ListItem';
 import Divider from '@material-ui/core/Divider';
-
-const useStyles = makeStyles((theme) => ({
-    inline: {
-        display: 'inline',
-    },
-    ayatPrimary: {
-        fontSize: '2rem',
-        textAlign: 'center',
-        fontFamily: 'Uthmanic',
-        marginBottom: '0.5em',
-        lineHeight: '1.7',
-        fontWeight: '600',
-    },
-    div: {
-        background: 'white'
-    },
-    frame: {
-        width: '20px'
-    }
-}));
+import Context from '../store/context';
 
 export default function Bismillah(props) {
-    const classes = useStyles();
+    const { state } = useContext(Context);
     const { surah } = props;
+
+    const useStyles = makeStyles((theme) => ({
+        bismillah: {
+            fontSize: `${state.fontSize * 1.9}rem`,
+        }
+    }));
+
+    const classes = useStyles(state.fontSize);
 
     if (surah !== 1 && surah !== 9) {
         return (
             <div className={classes.div}>
                 <ListItem alignItems="center">
-                    <div className="bismillah" >﻿بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيمِ</div>
+                    <div className={classes.bismillah + " bismillah"} >﻿بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيمِ</div>
                 </ListItem>
                 <Divider component="li" />
             </div>
