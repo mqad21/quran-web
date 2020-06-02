@@ -5,7 +5,7 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox
 const precacheManifest = [
   {
     "url": "asset-manifest.json",
-    "revision": "c9a507e1a4fe0b38c4fa27698a25cb4f"
+    "revision": "613abbe3c05ae2bac035267d48c6a376"
   },
   {
     "url": "assets/ayat.png",
@@ -17,7 +17,7 @@ const precacheManifest = [
   },
   {
     "url": "assets/frame-left.png",
-    "revision": "857fe7063ce9e7ce1fa9d369fe68d4f4"
+    "revision": "e1d7e7af8741d6734713638ee5feaa84"
   },
   {
     "url": "assets/frame-right.png",
@@ -41,15 +41,15 @@ const precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "f0af5046d29f0d0b7a3ec5fcdcb141dc"
+    "revision": "53559fee5aa0eeb5c872d28d19d381c0"
   },
   {
     "url": "manifest.json",
     "revision": "af89a022f5adc770193197a98d0a76b7"
   },
   {
-    "url": "precache-manifest.ad9c087653b23e430518b1c5950a470b.js",
-    "revision": "ad9c087653b23e430518b1c5950a470b"
+    "url": "precache-manifest.9242c32e4ce720562f8a8ea938c7687c.js",
+    "revision": "9242c32e4ce720562f8a8ea938c7687c"
   },
   {
     "url": "robots.txt",
@@ -57,22 +57,22 @@ const precacheManifest = [
   },
   {
     "url": "service-worker.js",
-    "revision": "2df64d19aefb58b0412a79cf7db06831"
+    "revision": "928f7b3939809709d2aee6f152e0e26d"
   },
   {
     "url": "static/css/2.5a510433.chunk.css",
     "revision": "38ae303f930cf49cbb9c51d8d3532615"
   },
   {
-    "url": "static/css/main.56f7d9b2.chunk.css",
-    "revision": "5591e7232040b469bc06fbf75e985e66"
+    "url": "static/css/main.a534b7ac.chunk.css",
+    "revision": "63a053db0729863aaab7a7d2dfbe9e63"
   },
   {
-    "url": "static/js/2.6c9b6d81.chunk.js",
-    "revision": "e2d8f445cc6bda3a465e0092063384aa"
+    "url": "static/js/2.3b54c4ba.chunk.js",
+    "revision": "aff450bfedfe20b6957f9d4753c95e6c"
   },
   {
-    "url": "static/js/2.6c9b6d81.chunk.js.LICENSE.txt",
+    "url": "static/js/2.3b54c4ba.chunk.js.LICENSE.txt",
     "revision": "8a4db58a4dd46ee87637857d04e63845"
   },
   {
@@ -80,16 +80,12 @@ const precacheManifest = [
     "revision": "5bd3b0c4b1997de20ace6e5645df746a"
   },
   {
-    "url": "static/media/frame-left.857fe706.png",
-    "revision": "857fe7063ce9e7ce1fa9d369fe68d4f4"
+    "url": "static/media/frame-left.2d4b1ab6.png",
+    "revision": "2d4b1ab6ccd9ca3a0d1f1e36ac004f84"
   },
   {
-    "url": "static/media/frame-right.46628c49.png",
-    "revision": "46628c49432941a226d7667130225d26"
-  },
-  {
-    "url": "static/media/uthmanic.43269f11.otf",
-    "revision": "43269f118299246de0cf264e04ae2680"
+    "url": "static/media/frame-right.def9fb37.png",
+    "revision": "def9fb37d14b43140f451d0c3f7ae5ad"
   },
   {
     "url": "workbox-v4.3.1/workbox-background-sync.dev.js",
