@@ -5,7 +5,7 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox
 const precacheManifest = [
   {
     "url": "asset-manifest.json",
-    "revision": "d17dbf0531de72b02e95ad9787e72417"
+    "revision": "ca93e3b6287a8b23fbb49b7f6bfb5698"
   },
   {
     "url": "assets/ayat.png",
@@ -45,15 +45,15 @@ const precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "fe5946ca9b6ca093cba109484d6f3c5d"
+    "revision": "c2884f93b574be2a90933ffb40d90524"
   },
   {
     "url": "manifest.json",
     "revision": "af89a022f5adc770193197a98d0a76b7"
   },
   {
-    "url": "precache-manifest.1117a6e872d3a022e95f339e87ae0816.js",
-    "revision": "1117a6e872d3a022e95f339e87ae0816"
+    "url": "precache-manifest.c66fcb2bd4a79773a809bcb1116a4d9d.js",
+    "revision": "c66fcb2bd4a79773a809bcb1116a4d9d"
   },
   {
     "url": "robots.txt",
@@ -61,7 +61,7 @@ const precacheManifest = [
   },
   {
     "url": "service-worker.js",
-    "revision": "a95475981899902ba7d990868243b2b9"
+    "revision": "3eae9953e1260dc2bfb883e263f24f27"
   },
   {
     "url": "static/css/2.5a510433.chunk.css",
@@ -72,11 +72,11 @@ const precacheManifest = [
     "revision": "8a3c5f26f5cda26601cc5a3948d0b12b"
   },
   {
-    "url": "static/js/2.cefa0818.chunk.js",
-    "revision": "716c6c728b13c451543ca218c6660ddd"
+    "url": "static/js/2.29fe5d4e.chunk.js",
+    "revision": "282d08a75f61dabff6b02b34bbbe5257"
   },
   {
-    "url": "static/js/2.cefa0818.chunk.js.LICENSE.txt",
+    "url": "static/js/2.29fe5d4e.chunk.js.LICENSE.txt",
     "revision": "4f64ec6ccd5b5efb7e0614021e2e63a4"
   },
   {
