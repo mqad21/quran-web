@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/quran-web/static/css/main.0f569f63.chunk.css",
-    "main.js": "/quran-web/static/js/main.83774e12.chunk.js",
-    "main.js.map": "/quran-web/static/js/main.83774e12.chunk.js.map",
+    "main.js": "/quran-web/static/js/main.7d4ba58d.chunk.js",
+    "main.js.map": "/quran-web/static/js/main.7d4ba58d.chunk.js.map",
     "runtime-main.js": "/quran-web/static/js/runtime-main.a1e289cd.js",
     "runtime-main.js.map": "/quran-web/static/js/runtime-main.a1e289cd.js.map",
     "static/css/2.5a510433.chunk.css": "/quran-web/static/css/2.5a510433.chunk.css",
-    "static/js/2.1f66de8b.chunk.js": "/quran-web/static/js/2.1f66de8b.chunk.js",
-    "static/js/2.1f66de8b.chunk.js.map": "/quran-web/static/js/2.1f66de8b.chunk.js.map",
+    "static/js/2.7bf34f03.chunk.js": "/quran-web/static/js/2.7bf34f03.chunk.js",
+    "static/js/2.7bf34f03.chunk.js.map": "/quran-web/static/js/2.7bf34f03.chunk.js.map",
     "index.html": "/quran-web/index.html",
-    "precache-manifest.75877ff576f7d1b70136fb05746e54c1.js": "/quran-web/precache-manifest.75877ff576f7d1b70136fb05746e54c1.js",
+    "precache-manifest.a31a7740f5e2666babc0f7791ffbda3f.js": "/quran-web/precache-manifest.a31a7740f5e2666babc0f7791ffbda3f.js",
     "service-worker.js": "/quran-web/service-worker.js",
     "static/css/2.5a510433.chunk.css.map": "/quran-web/static/css/2.5a510433.chunk.css.map",
     "static/css/main.0f569f63.chunk.css.map": "/quran-web/static/css/main.0f569f63.chunk.css.map",
-    "static/js/2.1f66de8b.chunk.js.LICENSE.txt": "/quran-web/static/js/2.1f66de8b.chunk.js.LICENSE.txt",
+    "static/js/2.7bf34f03.chunk.js.LICENSE.txt": "/quran-web/static/js/2.7bf34f03.chunk.js.LICENSE.txt",
     "static/media/App.css": "/quran-web/static/media/me_quran_2.6d078d32.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.a1e289cd.js",
     "static/css/2.5a510433.chunk.css",
-    "static/js/2.1f66de8b.chunk.js",
+    "static/js/2.7bf34f03.chunk.js",
     "static/css/main.0f569f63.chunk.css",
-    "static/js/main.83774e12.chunk.js"
+    "static/js/main.7d4ba58d.chunk.js"
   ]
 }
