@@ -5,7 +5,7 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox
 const precacheManifest = [
   {
     "url": "asset-manifest.json",
-    "revision": "613abbe3c05ae2bac035267d48c6a376"
+    "revision": "12bf53304fbe9ac8e4a810898fefa1dd"
   },
   {
     "url": "assets/ayat.png",
@@ -18,6 +18,10 @@ const precacheManifest = [
   {
     "url": "assets/frame-left.png",
     "revision": "e1d7e7af8741d6734713638ee5feaa84"
+  },
+  {
+    "url": "assets/frame-left.svg",
+    "revision": "3c2a8d099333858172a9b4139b359e95"
   },
   {
     "url": "assets/frame-right.png",
@@ -41,15 +45,15 @@ const precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "53559fee5aa0eeb5c872d28d19d381c0"
+    "revision": "c47be3d721d4275a25f6dc693c7a7e90"
   },
   {
     "url": "manifest.json",
     "revision": "af89a022f5adc770193197a98d0a76b7"
   },
   {
-    "url": "precache-manifest.9242c32e4ce720562f8a8ea938c7687c.js",
-    "revision": "9242c32e4ce720562f8a8ea938c7687c"
+    "url": "precache-manifest.27b6682016e6e05b60da5d76b024259e.js",
+    "revision": "27b6682016e6e05b60da5d76b024259e"
   },
   {
     "url": "robots.txt",
@@ -57,23 +61,23 @@ const precacheManifest = [
   },
   {
     "url": "service-worker.js",
-    "revision": "928f7b3939809709d2aee6f152e0e26d"
+    "revision": "2adeb186cc309d6c4d90b4211ae7803a"
   },
   {
     "url": "static/css/2.5a510433.chunk.css",
     "revision": "38ae303f930cf49cbb9c51d8d3532615"
   },
   {
-    "url": "static/css/main.a534b7ac.chunk.css",
-    "revision": "63a053db0729863aaab7a7d2dfbe9e63"
+    "url": "static/css/main.0f569f63.chunk.css",
+    "revision": "8a3c5f26f5cda26601cc5a3948d0b12b"
   },
   {
-    "url": "static/js/2.3b54c4ba.chunk.js",
-    "revision": "aff450bfedfe20b6957f9d4753c95e6c"
+    "url": "static/js/2.b856cbdc.chunk.js",
+    "revision": "c39328d9853afc0bc26266fb341524ef"
   },
   {
-    "url": "static/js/2.3b54c4ba.chunk.js.LICENSE.txt",
-    "revision": "8a4db58a4dd46ee87637857d04e63845"
+    "url": "static/js/2.b856cbdc.chunk.js.LICENSE.txt",
+    "revision": "90debaa242167aa8920826b9f0eeda6a"
   },
   {
     "url": "static/js/runtime-main.a1e289cd.js",

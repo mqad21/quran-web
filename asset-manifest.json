@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/quran-web/static/css/main.a534b7ac.chunk.css",
-    "main.js": "/quran-web/static/js/main.f11cb5ed.chunk.js",
-    "main.js.map": "/quran-web/static/js/main.f11cb5ed.chunk.js.map",
+    "main.css": "/quran-web/static/css/main.0f569f63.chunk.css",
+    "main.js": "/quran-web/static/js/main.b4094eb2.chunk.js",
+    "main.js.map": "/quran-web/static/js/main.b4094eb2.chunk.js.map",
     "runtime-main.js": "/quran-web/static/js/runtime-main.a1e289cd.js",
     "runtime-main.js.map": "/quran-web/static/js/runtime-main.a1e289cd.js.map",
     "static/css/2.5a510433.chunk.css": "/quran-web/static/css/2.5a510433.chunk.css",
-    "static/js/2.3b54c4ba.chunk.js": "/quran-web/static/js/2.3b54c4ba.chunk.js",
-    "static/js/2.3b54c4ba.chunk.js.map": "/quran-web/static/js/2.3b54c4ba.chunk.js.map",
+    "static/js/2.b856cbdc.chunk.js": "/quran-web/static/js/2.b856cbdc.chunk.js",
+    "static/js/2.b856cbdc.chunk.js.map": "/quran-web/static/js/2.b856cbdc.chunk.js.map",
     "index.html": "/quran-web/index.html",
-    "precache-manifest.9242c32e4ce720562f8a8ea938c7687c.js": "/quran-web/precache-manifest.9242c32e4ce720562f8a8ea938c7687c.js",
+    "precache-manifest.27b6682016e6e05b60da5d76b024259e.js": "/quran-web/precache-manifest.27b6682016e6e05b60da5d76b024259e.js",
     "service-worker.js": "/quran-web/service-worker.js",
     "static/css/2.5a510433.chunk.css.map": "/quran-web/static/css/2.5a510433.chunk.css.map",
-    "static/css/main.a534b7ac.chunk.css.map": "/quran-web/static/css/main.a534b7ac.chunk.css.map",
-    "static/js/2.3b54c4ba.chunk.js.LICENSE.txt": "/quran-web/static/js/2.3b54c4ba.chunk.js.LICENSE.txt",
+    "static/css/main.0f569f63.chunk.css.map": "/quran-web/static/css/main.0f569f63.chunk.css.map",
+    "static/js/2.b856cbdc.chunk.js.LICENSE.txt": "/quran-web/static/js/2.b856cbdc.chunk.js.LICENSE.txt",
     "static/media/App.css": "/quran-web/static/media/me_quran_2.6d078d32.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.a1e289cd.js",
     "static/css/2.5a510433.chunk.css",
-    "static/js/2.3b54c4ba.chunk.js",
-    "static/css/main.a534b7ac.chunk.css",
-    "static/js/main.f11cb5ed.chunk.js"
+    "static/js/2.b856cbdc.chunk.js",
+    "static/css/main.0f569f63.chunk.css",
+    "static/js/main.b4094eb2.chunk.js"
   ]
 }
