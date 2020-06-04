@@ -5,7 +5,7 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox
 const precacheManifest = [
   {
     "url": "asset-manifest.json",
-    "revision": "cfc70ed0024d292311631fe39da8d7a1"
+    "revision": "6e27d4fce40a24d7afb5a8eb68589cb8"
   },
   {
     "url": "assets/ayat.png",
@@ -45,15 +45,15 @@ const precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "c0eac944e10e4ac4e90beafd89317288"
+    "revision": "12b1afc966c2fc48a91c901bc7e38922"
   },
   {
     "url": "manifest.json",
     "revision": "af89a022f5adc770193197a98d0a76b7"
   },
   {
-    "url": "precache-manifest.a31a7740f5e2666babc0f7791ffbda3f.js",
-    "revision": "a31a7740f5e2666babc0f7791ffbda3f"
+    "url": "precache-manifest.cf55656b12d7dd8c3b0749e9a84f681e.js",
+    "revision": "cf55656b12d7dd8c3b0749e9a84f681e"
   },
   {
     "url": "robots.txt",
@@ -61,7 +61,7 @@ const precacheManifest = [
   },
   {
     "url": "service-worker.js",
-    "revision": "66845417427a0e3d445c255053ddd33d"
+    "revision": "ec7d5190591dcc0924c2087ce8bbf93f"
   },
   {
     "url": "static/css/2.5a510433.chunk.css",
