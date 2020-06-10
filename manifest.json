@@ -14,7 +14,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "/",
+  "start_url": "https://mqad21.github.io/quran-web/",
   "display": "standalone",
   "theme_color": "#43e485",
   "background_color": "#ffffff"
