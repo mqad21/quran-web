@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "438223de65a5b02df13ac10b79cba86a",
+    "revision": "9a2b5fc4500ab4d9e53ee217e744679a",
     "url": "/quran-web/index.html"
   },
   {
