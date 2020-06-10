@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import { Dialog, DialogTitle, DialogContent, Slider, Grid, Checkbox, FormControlLabel, FormGroup } from '@material-ui/core';
 import { FontDownloadOutlined, Brightness7, Brightness4 } from '@material-ui/icons';
 import Context from '../store/context';
@@ -65,7 +64,13 @@ export default function DialogPopup(props) {
                             />
                         </FormGroup>
                     </DialogContent>
-                )
+                );
+                break;
+            default:
+                return {
+                    title: title,
+                    body: body
+                }
         }
         return {
             title: title,

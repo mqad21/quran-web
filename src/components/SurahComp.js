@@ -4,7 +4,7 @@ import Ayat from './AyatComp';
 import { makeStyles } from '@material-ui/core/styles';
 import Loading from './LoadingComp';
 import Bismillah from './BismillahComp';
-import AyatJSON from '../json/quran-simple.json';
+import AyatJSON from '../json/quran-uthmani.json';
 import TransJSON from '../json/translation.json';
 
 const useStyles = makeStyles((theme) => ({
@@ -22,7 +22,7 @@ function SurahCont(props) {
     const classes = useStyles();
     const [ayatArr, setAyatArr] = useState([]);
     const [transArr, setTransArr] = useState([]);
-    const { type, surah } = props;
+    const { surah, ayatScroll } = props;
     const [surahId, setSurahId] = useState(1);
     const [isLoading, setLoading] = useState(true)
     const [quranData, setQuranData] = useState([]);
@@ -44,7 +44,7 @@ function SurahCont(props) {
         return new Promise((resolve, reject) => {
             resolve(
                 obj.filter((surah) => {
-                    return surah.ay.number == filter;
+                    return surah.ay.number ===filter;
                 })[0]
             )
         });
@@ -60,6 +60,21 @@ function SurahCont(props) {
         });
     }
 
+    const scrollToAyat = (ayatCurrent) => {
+        if (ayatCurrent < 1) ayatCurrent = 1;
+        if (ayatCurrent > 1) {
+            var ayatElem = document.getElementById("ayat-" + ayatCurrent);
+            if (ayatElem !==null)
+                ayatElem.scrollIntoView({ behavior: 'auto' });
+            var scrolledY = window.scrollY;
+            if (scrolledY) {
+                window.scroll(0, scrolledY - 99);
+            }
+        } else {
+            window.scrollTo(0, 0);
+        }
+    }
+
     function fetchAyat() {
         console.log(quranData)
         surahFilter(surahId, quranData)
@@ -67,8 +82,11 @@ function SurahCont(props) {
             .then(status => {
                 if (status) {
                     setTimeout(() => {
-                        setLoading(false)
-                    }, 500)
+                        setLoading(false);
+                    }, 500);
+                    setTimeout(() => {
+                        scrollToAyat(ayatScroll)
+                    }, 2000)
                 }
             });
     }

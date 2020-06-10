@@ -10,7 +10,7 @@ export default function Bismillah(props) {
 
     const useStyles = makeStyles((theme) => ({
         bismillah: {
-            fontSize: `${state.fontSize * 1.9}rem`,
+            fontSize: `${state.fontSize * 1.75}rem`,
         }
     }));
 

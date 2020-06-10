@@ -10,7 +10,7 @@ function replaceAyat(replaceHarf, ayat, number) {
     for (var i = 0; i < replaceHarf.length; i++) {
         newAyat = newAyat.replace(replaceHarf[i].search, replaceHarf[i].new)
     }
-    if (number == 1 && ayat.length >= 40 && ayat.substring(0, 2) == 'بِ') {
+    if (number === 1 && ayat.length >= 40 && ayat.substring(0, 2) === 'بِ') {
         newAyat = removeBismillah(newAyat)
     }
     return newAyat;
@@ -41,12 +41,12 @@ export default function Ayat(props) {
             minWidth: '55px',
         },
         ayatPrimary: {
-            fontSize: `${state.fontSize * 1.9}rem`,
+            fontSize: `${state.fontSize * 1.75}rem`,
             textAlign: 'right',
-            fontFamily: 'Uthmanic',
+            fontFamily: 'MeQuran',
             marginBottom: '0.5em',
-            lineHeight: '1.7',
-            fontWeight: '600'
+            lineHeight: '1.9',
+            fontWeight: '500'
         },
         ayatSecondary: {
             fontSize: `${state.fontSize * 1.1}rem`
@@ -83,17 +83,8 @@ export default function Ayat(props) {
     }, [state.savedSurah]);
 
     const isSaved = (
-        state.savedSurah.ayat == ayat.numberInSurah && state.savedSurah.surah == surah
+        state.savedSurah.ayat === ayat.numberInSurah && state.savedSurah.surah === surah
     )
-
-    // const showSnackBar = (message) => {
-    //     setOpenSnack(true);
-    //     setSnackbarMsg(message);
-    // };
-
-    // const handleCloseSnack = () => {
-    //     setOpenSnack(false);
-    // }
 
     const savedButton = () => {
         if (isLoadingSave) {
@@ -112,7 +103,7 @@ export default function Ayat(props) {
             return (
                 <FormControlLabel style={{ margin: '0' }} control={
                     <Checkbox
-                        icon={<BookmarkBorderOutlined />}
+                        icon={<BookmarkBorderOutlined color="secondary" />}
                         checkedIcon={<BookmarkOutlined />}
                         checked={isSaved}
                         onChange={handleSave} />}

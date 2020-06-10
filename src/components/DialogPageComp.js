@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Dialog, Button, Slide, AppBar, Toolbar, IconButton, Typography, List, ListItem, ListItemText, Divider } from '@material-ui/core';
+import { Dialog, Slide, AppBar, Toolbar, IconButton, Typography, List, ListItem, ListItemText, Divider } from '@material-ui/core';
 import { Close as CloseIcon } from '@material-ui/icons';
 import DialogPopup from './DialogPopupComp';
 import Context from '../store/context';
@@ -47,6 +47,8 @@ export default function DialogPage(props) {
             case "darkMode":
                 setTypePopup("darkMode");
                 break;
+            default:
+                return;
         }
         setOpenPopup(true);
     }
@@ -67,6 +69,9 @@ export default function DialogPage(props) {
                         </ListItem>
                     </List>
                 );
+                break;
+            default: 
+                return;
         }
         return {
             title: title,

@@ -1,9 +1,12 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import Home from './pages/Home';
+import { makeStyles } from '@material-ui/core/styles';
 import Surah from './pages/Surah';
 import Juz from './pages/Juz';
+import Tentang from './pages/Tentang';
+import Lapor from './pages/Masukan';
+import Cari from './pages/Cari';
+
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -28,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 
 const SurahWithId = ({ match }) => {
     return (
-        <Surah surah={parseInt(match.params.surahId, 10)} />
+        <Surah surah={parseInt(match.params.surahId, 10)} ayat={match.params.ayat || null} />
     )
 }
 
@@ -40,18 +43,21 @@ const JuzWithId = ({ match }) => {
 
 function Content() {
     const classes = useStyles();
-    const theme = useTheme();
+    const baseUrl = process.env.PUBLIC_URL;
 
     return (
         <main className={classes.content}>
             <div className={classes.drawerHeader} />
             <Switch>
-                <Route path="/surah/:surahId" component={SurahWithId} />
-                <Route path="/juz/:juzId" component={JuzWithId} />
-                <Redirect exact from="/" to="/surah/1" />
-                <Redirect exact from="/surah" to="/surah/1" />
-                <Redirect exact from="/juz" to="/juz/1" />
-                <Redirect to="/surah/1"/>
+                <Route exact path={`${baseUrl}/surah/:surahId`} component={SurahWithId} />
+                <Route exact path={`${baseUrl}/surah/:surahId/:ayat`} component={SurahWithId} />
+                <Route path={`${baseUrl}/juz/:juzId`} component={JuzWithId} />
+                <Route exact path={`${baseUrl}/cari`} component={Cari} />
+                <Route exact path={`${baseUrl}/tentang`} component={Tentang} />
+                <Route exact path={`${baseUrl}/masukan`} component={Lapor} />
+                <Redirect exact from={`${baseUrl}/surah`} to={`${baseUrl}/surah/1`} />
+                <Redirect exact from={`${baseUrl}/juz`} to={`${baseUrl}/juz/1`} />
+                <Redirect to={`${baseUrl}/surah/1`} />
             </Switch>
         </main>
     )

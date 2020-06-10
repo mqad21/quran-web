@@ -3,11 +3,15 @@ import React, { useState } from 'react';
 function useGlobalStore() {
     const [state, setState] = useState(
         {
+            menu: "surah",
             fontSize: localStorage.getItem('fontSize') || 1,
-            darkMode: localStorage.getItem('darkMode') || false,
+            darkMode: JSON.parse(localStorage.getItem('darkMode')),
             savedSurah: JSON.parse(localStorage.getItem('savedSurah')) || { surah: null, ayat: null },
             snack: { open: false, message:"" },
-            scrollTo: false
+            scrollTo: false,
+            keywordSearch: "",
+            firstLoadSearch: true,
+            resultSearch: []
         }
     );
 
@@ -16,7 +20,7 @@ function useGlobalStore() {
     }, [state.fontSize]);
 
     React.useEffect(() => {
-        localStorage.setItem('darkMode', state.darkMode);
+        localStorage.setItem('darkMode', JSON.stringify(state.darkMode));
     }, [state.darkMode]);
 
     React.useEffect(() => {

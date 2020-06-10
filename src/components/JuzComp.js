@@ -4,7 +4,7 @@ import Ayat from './AyatComp';
 import { makeStyles } from '@material-ui/core/styles';
 import Loading from './LoadingComp';
 import Bismillah from './BismillahComp';
-import AyatJSON from '../json/quran-simple.json';
+import AyatJSON from '../json/quran-uthmani.json';
 import TransJSON from '../json/translation.json';
 import clsx from 'clsx';
 
@@ -51,12 +51,12 @@ function JuzCont(props) {
             var ayatArr = [];
             for (var i = 0; i < obj.length; i++) {
                 var ayats = obj[i].ay.ayahs.filter((ay) => {
-                    return ay.juz == filter;
+                    return ay.juz ===filter;
                 });
                 juzLength += ayats.length;
                 ayatsSelected.push(ayats);
                 var trans = obj[i].tr.ayahs.filter((tr) => {
-                    return tr.juz == filter;
+                    return tr.juz ===filter;
                 });
                 transSelected.push(trans);
                 if (ayats.length !== 0) surahId.push(obj[i].ay.number);

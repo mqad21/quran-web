@@ -13,21 +13,21 @@ const dataCacheConfig = {
 
 workbox.routing.registerRoute(
     /.*.(?:js|css|otf)$/,
-    workbox.strategies.cacheFirst({
+    workbox.strategies.precacheAndRoute({
         cacheName: 'quran-assets'
     }),
     'GET');
 
 workbox.routing.registerRoute(
     /.*.(?:png|jpg|jpeg|svg)$/,
-    workbox.strategies.cacheFirst({
+    workbox.strategies.precacheAndRoute({
         cacheName: 'quran-images'
     }),
     'GET');
 
 workbox.routing.registerRoute(
     /.*.(?:json)$/,
-    workbox.strategies.cacheFirst({
+    workbox.strategies.precacheAndRoute({
         cacheName: 'quran-json'
     }),
     'GET');
@@ -41,7 +41,7 @@ workbox.routing.registerRoute(
 
 workbox.routing.registerRoute(
     /^https:\/\/fonts\.gstatic\.com/,
-    workbox.strategies.cacheFirst({
+    workbox.strategies.precacheAndRoute({
         cacheName: 'google-fonts-webfonts',
         plugins: [
             new workbox.cacheableResponse.Plugin({

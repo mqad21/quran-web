@@ -1,14 +1,13 @@
-import React, { useEffect, useRef, useState, useContext } from 'react';
+import React, { useEffect, useRef } from 'react';
 import TabMenu from '../TabMenuComp';
 import TabPanel from '../TabPanelComp';
 import SurahCont from '../SurahComp';
 import Fab from '@material-ui/core/Fab';
-import { makeStyles, useTheme, withStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import HeightIcon from '@material-ui/icons/HeightRounded';
 import SurahList from '../../json/surah.json';
 import Slider from '@material-ui/core/Slider';
 import clsx from 'clsx';
-import Context from '../../store/context';
 
 const useStyles = makeStyles((theme) => ({
     fab: {
@@ -63,14 +62,12 @@ const PrettoSlider = withStyles({
 })(Slider);
 
 function Surah(props) {
-    const { surah } = props;
+    const { surah, ayat } = props;
     const classes = useStyles();
-    const theme = useTheme();
     const [hideScroll, setHideScroll] = React.useState(true);
-    const [ayatScroll, setAyatScroll] = React.useState(1);
     const [surahLength, setSurahLength] = React.useState(0);
     const ayatSlider = useRef();
-    const { state, actions } = useContext(Context);
+
     const useOutsideClick = (ref, callback) => {
         const handleClick = e => {
             if (ref.current && !ref.current.contains(e.target)) {
@@ -101,7 +98,6 @@ function Surah(props) {
 
     const handleChangeTab = (event, value) => {
         setHideScroll(true);
-        setAyatScroll(1);
         window.scrollTo(0, 0);
     };
 
@@ -114,11 +110,12 @@ function Surah(props) {
         scrollToAyat(ayatCurrent);
     }
 
-    function scrollToAyat(ayatCurrent) {
+    const scrollToAyat = (ayatCurrent) => {
         if (ayatCurrent < 1) ayatCurrent = 1;
         if (ayatCurrent > 1) {
             var ayatElem = document.getElementById("ayat-" + ayatCurrent);
-            ayatElem.scrollIntoView({ behavior: 'auto' });
+            if (ayatElem !==null)
+                ayatElem.scrollIntoView({ behavior: 'auto' });
             var scrolledY = window.scrollY;
             if (scrolledY) {
                 window.scroll(0, scrolledY - 99);
@@ -128,22 +125,11 @@ function Surah(props) {
         }
     }
 
-    React.useEffect(() => {
-        if (state.scrollTo) {
-            scrollToAyat(state.savedSurah.ayat);
-        }
-        actions({
-            type: 'setState', payload: {
-                ...state, scrollTo: false
-            }
-        });
-    }, [state.scrollTo])
-
     return (
         <React.Fragment>
-            <TabMenu tabSelected={surah} list={SurahList} handleChangeTab={handleChangeTab} />
+            <TabMenu tabSelected={surah} list={SurahList} handleChangeTab={handleChangeTab} type="surah"/>
             <TabPanel>
-                <SurahCont type="surah" surah={props.surah} setSurahLength={setSurahLength} ayatScroll={ayatScroll} />
+                <SurahCont type="surah" surah={props.surah} setSurahLength={setSurahLength} ayatScroll={ayat} scrollToAyat={scrollToAyat}/>
             </TabPanel>
             <div ref={ayatSlider}>
                 <Fab aria-label={fab.label} className={fab.className} color={fab.color}

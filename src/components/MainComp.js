@@ -2,12 +2,11 @@ import React, { useContext } from 'react';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Drawer, CssBaseline, AppBar, Toolbar, List, Typography, Divider, IconButton, ListItem, ListItemText, ListItemIcon, Menu, MenuItem, Snackbar } from '@material-ui/core';
-import { Menu as MenuIcon, ChevronLeft, ChevronRight, Book, LibraryBooks, Info, MoreVert, Close } from '@material-ui/icons';
+import { Menu as MenuIcon, ChevronLeft, ChevronRight, Book, LibraryBooks, Info, MoreVert, Announcement, Search } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 import Content from './ContentComp';
 import DialogPage from './DialogPageComp';
 import Context from '../store/context';
-// import { green } from '@material-ui/core/colors';
 
 const drawerWidth = 240;
 
@@ -83,15 +82,11 @@ export default function MainComp() {
     const classes = useStyles();
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
-    const [title, setTitle] = React.useState("");
     const [anchorEl, setAnchorEl] = React.useState(null);
     const openToolbar = Boolean(anchorEl);
     const [openDialog, setOpenDialog] = React.useState(false);
     const [typeDialog, setTypeDialog] = React.useState("settings");
     const { state, actions } = useContext(Context);
-    const [snackbarMsg, setSnackbarMsg] = React.useState("");
-    const [openSnack, setOpenSnack] = React.useState(false);
-    const [isSavedAyat, setIsSavedAyat] = React.useState(false);
 
     const handleDrawerOpen = () => {
         setOpen(true);
@@ -103,7 +98,7 @@ export default function MainComp() {
 
     const onItemClick = title => () => {
         setOpen(!open);
-        setTitle(title);
+        actions({ type: 'setState', payload: { ...state, menu: title } });
     };
 
     const handleCloseDialog = () => {
@@ -113,13 +108,10 @@ export default function MainComp() {
     const ListMenu = [
         { name: 'Baca Surah', icon: LibraryBooks, url: 'surah' },
         { name: 'Baca Juz', icon: Book, url: 'juz' },
-        { name: 'Tentang', icon: Info, url: 'tentang' }
+        { name: 'Pencarian', icon: Search, url: 'cari' },
+        { name: 'Beri Masukan', icon: Announcement, url: 'masukan' },
+        { name: 'Tentang', icon: Info, url: 'tentang' },
     ];
-
-    React.useEffect(() => {
-        const urlArr = window.location.href.split("/");
-        setTitle(urlArr[4]);
-    }, []);
 
     const handleMenu = (event) => {
         setAnchorEl(event.currentTarget);
@@ -157,20 +149,18 @@ export default function MainComp() {
         });
     }
 
-    React.useEffect(() => {
-        showSnack("Berhasil menandai ayat!")
-        setTimeout(() => {
-            closeSnack();
-        }, 500)
-    }, [state.savedSurah]);
+    const isInitialMount = React.useRef(true);
 
-    const handleToSaved = () => {
-        actions({
-            type: 'setState', payload: {
-                ...state, scrollTo: true
-            }
-        });
-    };
+    React.useEffect(() => {
+        if (isInitialMount.current) {
+            isInitialMount.current = false;
+        } else {
+            showSnack("Berhasil menandai ayat!")
+            setTimeout(() => {
+                closeSnack();
+            }, 1000)
+        }
+    }, [state.savedSurah]);
 
     return (
         <div className={classes.root}>
@@ -191,7 +181,7 @@ export default function MainComp() {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <img src={process.env.PUBLIC_URL + "/assets/logo-white.png"} className={classes.img} width="30" />
+                    <img src={process.env.PUBLIC_URL + "/assets/logo-white.png"} alt="logo-white" className={classes.img} width="30" />
                     <Typography variant="h6" noWrap>
                         Quran Web
                         </Typography>
@@ -216,8 +206,8 @@ export default function MainComp() {
                             open={openToolbar}
                             onClose={() => handleClose()}
                         >
+                            <MenuItem disabled={state.savedSurah.surah ===null} component={Link} to={`${process.env.PUBLIC_URL}/surah/${state.savedSurah.surah}/${state.savedSurah.ayat}`}>Ke Penanda Ayat</MenuItem>
                             <MenuItem onClick={handleSetting}>Pengaturan</MenuItem>
-                            <MenuItem onClick={handleToSaved} component={Link} to={`/surah/${state.savedSurah.surah}`}>Ke Penanda Ayat</MenuItem>
                         </Menu>
                     </div>
                 </Toolbar>
@@ -238,12 +228,19 @@ export default function MainComp() {
                 </div>
                 <Divider />
                 <List>
-                    {ListMenu.map((menu, index) => (
-                        <ListItem button key={index} component={Link} to={"/" + menu.url} onClick={onItemClick(menu.url)} selected={title === menu.url}>
-                            <ListItemIcon><menu.icon /></ListItemIcon>
-                            <ListItemText primary={menu.name} />
-                        </ListItem>
-                    ))}
+                    {ListMenu.map((menu, index) => {
+                        const menuCount = 3;
+                        const baseUrl = process.env.PUBLIC_URL;
+                        return (
+                            <React.Fragment>
+                                <Divider hidden={index !==(menuCount)} />
+                                <ListItem button key={index} component={Link} to={`${baseUrl}/` + menu.url} onClick={onItemClick(menu.url)} selected={state.menu === menu.url}>
+                                    <ListItemIcon><menu.icon /></ListItemIcon>
+                                    <ListItemText primary={menu.name} />
+                                </ListItem>
+                            </React.Fragment>
+                        )
+                    })}
                 </List>
             </Drawer>
             <Content />
@@ -252,7 +249,7 @@ export default function MainComp() {
                 anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
                 open={state.snack.open}
                 message={state.snack.message}
-                autoHideDuration={200}
+                autoHideDuration={1000}
             />
         </div>
     );

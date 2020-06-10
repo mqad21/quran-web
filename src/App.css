@@ -1,19 +1,24 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-@import url('https://fonts.googleapis.com/css?family=Amiri:400,400i,700,700i');
-@import url('https://fonts.googleapis.com/css2?family=Lateef&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Scheherazade:wght@700&display=swap');
 @font-face {
-    font-family: Uthmanic;
-    src: url("./assets/uthmanic.otf") format("opentype");
+    font-family: MeQuran;
+    src: url("./assets/me_quran_2.ttf") format("truetype");
+}
+
+input{
+    outline: none !important;
+    border: none !important;
+    /* -webkit-box-shadow: none !important; */
+    box-shadow: none !important;
+    padding: 0.5rem 1rem 0 1rem !important;
 }
 
 .bismillah {
     display: inline-flex !important;
     text-align: center;
-    font-family: Uthmanic;
+    font-family: MeQuran;
     margin-bottom: 0.5em;
     line-height: 1.7;
-    font-weight: 600;
+    font-weight: 500;
     justify-content: center;
     width: 100%;
 }

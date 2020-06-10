@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import TabMenu from '../TabMenuComp';
 import TabPanel from '../TabPanelComp';
 import JuzCont from '../JuzComp';
@@ -129,7 +129,7 @@ function Juz(props) {
 
     return (
         <div>
-            <TabMenu tabSelected={juz} list={JuzList} handleChangeTab={handleChangeTab}/>
+            <TabMenu tabSelected={juz} list={JuzList} handleChangeTab={handleChangeTab} type="juz"/>
             <TabPanel>
                 <JuzCont type="juz" juz={props.juz} setJuzLength={setJuzLength} setAyatArr={setAyatArr} ayatScroll={ayatScroll} />
             </TabPanel>

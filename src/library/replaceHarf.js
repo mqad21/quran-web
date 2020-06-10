@@ -32,9 +32,5 @@ export const replaceHarf = [
     { search: 'لِلَّهِ', new: 'لِلّٰهِ' },
     { search: 'اللَّهَ', new: 'اللّٰهَ' },
     { search: 'اللَّهُ', new: 'اللّٰهُ' },
-    { search: 'آ', new: 'اٰ' },
-    { search: 'آ', new: 'اٰ' },
-    { search: 'اء', new: 'آء' },
-    { search: 'ين', new: 'يْن' },
-    { search: 'وا', new: 'وْا' }
+    {search: 'فِى', new: 'فِيْ'}
 ]

@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, Tabs, Tab, Snackbar, SnackbarContent } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import SurahList from '../json/surah.json';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -36,34 +35,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function TabMenu(props) {
     const classes = useStyles();
-    const [showSnack, setShowSnack] = useState(false);
-    const [surahActive, setSurahActive] = React.useState(0);
-    const { tabSelected, handleChangeTab } = props;
-    var x;
-
-    const getTopSurahId = () => {
-        var ayats = document.getElementsByClassName('ayat');
-        for (var i = 0; i < ayats.length; i++) {
-            if (ayats[i].getBoundingClientRect().top > 0) return ayats[i].getAttribute('data-surah');
-        }
-    }
-
-    useEffect(() => {
-        window.addEventListener("scroll", (e) => {
-            clearTimeout(x);
-            e.preventDefault();
-            if (!showSnack) {
-                var id = getTopSurahId();
-                setSurahActive(SurahList[id - 1] === undefined ? '' : SurahList[id - 1].nama);
-                setShowSnack(true);
-            }
-            x = setTimeout(() => {
-                if (showSnack) {
-                    setShowSnack(false)
-                }
-            }, 500);
-        })
-    });
+    const [showSnack] = useState(false);
+    const [surahActive] = React.useState(0);
+    const { tabSelected, handleChangeTab, type } = props;
 
     return (
         <div className={classes.root}>
@@ -78,7 +52,7 @@ export default function TabMenu(props) {
                 >
                     {
                         props.list.map((list, index) => (
-                            <Tab label={list.nama} component={Link} to={(index + 1).toString()} />
+                            <Tab label={list.nama} component={Link} to={`${process.env.PUBLIC_URL}/${type}/${index+1}`} />
                         ))
                     }
                 </Tabs>
