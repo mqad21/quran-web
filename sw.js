@@ -202,27 +202,23 @@ const precacheManifest = [
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(precacheManifest);
 
-const dataCacheConfig = {
-    cacheName: 'quran-data'
-};
-
 workbox.routing.registerRoute(
     /.*.(?:js|css|ttf|otf)$/,
-    workbox.strategies.precacheAndRoute({
+    workbox.strategies.staleWhileRevalidate({
         cacheName: 'quran-assets'
     }),
     'GET');
 
 workbox.routing.registerRoute(
     /.*.(?:png|jpg|jpeg|svg)$/,
-    workbox.strategies.precacheAndRoute({
+    workbox.strategies.staleWhileRevalidate({
         cacheName: 'quran-images'
     }),
     'GET');
 
 workbox.routing.registerRoute(
     /.*.(?:json)$/,
-    workbox.strategies.precacheAndRoute({
+    workbox.strategies.staleWhileRevalidate({
         cacheName: 'quran-json'
     }),
     'GET');
@@ -236,7 +232,7 @@ workbox.routing.registerRoute(
 
 workbox.routing.registerRoute(
     /^https:\/\/fonts\.gstatic\.com/,
-    workbox.strategies.precacheAndRoute({
+    workbox.strategies.staleWhileRevalidate({
         cacheName: 'google-fonts-webfonts',
         plugins: [
             new workbox.cacheableResponse.Plugin({
