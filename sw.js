@@ -5,7 +5,7 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox
 const precacheManifest = [
   {
     "url": "asset-manifest.json",
-    "revision": "6e27d4fce40a24d7afb5a8eb68589cb8"
+    "revision": "9974bebe769db2d2153d3d8ee38dd728"
   },
   {
     "url": "assets/ayat.png",
@@ -45,15 +45,15 @@ const precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "12b1afc966c2fc48a91c901bc7e38922"
+    "revision": "5ba39625fb9bce00c6b73e26d3d0206a"
   },
   {
     "url": "manifest.json",
     "revision": "af89a022f5adc770193197a98d0a76b7"
   },
   {
-    "url": "precache-manifest.cf55656b12d7dd8c3b0749e9a84f681e.js",
-    "revision": "cf55656b12d7dd8c3b0749e9a84f681e"
+    "url": "precache-manifest.1785ffd215913ca6896931fa422d66e8.js",
+    "revision": "1785ffd215913ca6896931fa422d66e8"
   },
   {
     "url": "robots.txt",
@@ -61,7 +61,7 @@ const precacheManifest = [
   },
   {
     "url": "service-worker.js",
-    "revision": "ec7d5190591dcc0924c2087ce8bbf93f"
+    "revision": "6caefceb4fd80e9357ed794e4441601c"
   },
   {
     "url": "static/css/2.5a510433.chunk.css",
@@ -72,11 +72,11 @@ const precacheManifest = [
     "revision": "8a3c5f26f5cda26601cc5a3948d0b12b"
   },
   {
-    "url": "static/js/2.7bf34f03.chunk.js",
-    "revision": "7e0007b22baf7a4821300eec98516b98"
+    "url": "static/js/2.06e5e3d4.chunk.js",
+    "revision": "36e5f592ec131c08c9781131933d0516"
   },
   {
-    "url": "static/js/2.7bf34f03.chunk.js.LICENSE.txt",
+    "url": "static/js/2.06e5e3d4.chunk.js.LICENSE.txt",
     "revision": "4f64ec6ccd5b5efb7e0614021e2e63a4"
   },
   {
@@ -209,7 +209,7 @@ const dataCacheConfig = {
 };
 
 workbox.routing.registerRoute(
-    /.*.(?:js|css|otf)$/,
+    /.*.(?:js|css|ttf|otf)$/,
     workbox.strategies.precacheAndRoute({
         cacheName: 'quran-assets'
     }),
